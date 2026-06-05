@@ -1,0 +1,82 @@
+
+% Title slide
+\frame{\titlepage}
+
+% Full table of contents
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% -------------------------------------------------------
+\section{Section One}
+% -------------------------------------------------------
+
+\begin{frame}{Frame Title}
+  % Standard bullet list with progressive reveal
+  \begin{itemize}
+    \item<1-> First point
+    \item<2-> Second point
+    \item<3-> Third point
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Two-Column Frame}
+  \begin{columns}
+    \column{0.5\textwidth}
+      Left column content here.
+    \column{0.5\textwidth}
+      Right column content here.
+  \end{columns}
+\end{frame}
+
+% -------------------------------------------------------
+\section{Section Two}
+% -------------------------------------------------------
+
+\begin{frame}{Alert Block}
+  \begin{alertblock}{Block Title}
+    Key result or definition goes here.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Standard Block + Example}
+  \begin{block}{Block Title}
+    Statement or theorem goes here.
+  \end{block}
+  \begin{example}
+    Example content goes here.
+  \end{example}
+\end{frame}
+
+\begin{frame}{Paused Equations}
+  \pause
+  $$\text{First equation}$$\pause
+  $$\text{Second equation}$$\pause
+  $$\text{Third equation}$$
+\end{frame}
+
+% -------------------------------------------------------
+\section{Section Three}
+% -------------------------------------------------------
+
+\begin{frame}{Plot Frame}
+  \begin{example}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+          axis lines = left,
+          xlabel = \(x\),
+          ylabel = {\(f(x)\)},
+      ]
+        % Add \addplot commands here
+        \addplot [domain=-5:5, samples=100, color=red] {x^2};
+        \addplot [domain=-5:5, samples=100, color=blue] {x^3};
+      \end{axis}
+    \end{tikzpicture}
+  \end{example}
+\end{frame}
+
+\begin{frame}{Centred Image Frame}
+  \centering\includegraphics[scale=0.5]{image.png}
+\end{frame}
