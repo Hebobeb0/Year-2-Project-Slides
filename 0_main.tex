@@ -2,7 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{pgfplots}
-\usepackage{lmodern}
+\usepackage[scaled=1]{helvet}
+\usepackage{tikz}
+\renewcommand{\familydefault}{\sfdefault}
 %\usepgfplotslibrary{external}
 %\tikzexternalize
 \pgfplotsset{width=5cm,compat=1.9}
@@ -32,7 +34,7 @@
 \metroset{numbering=none}
 \metroset{block=fill}
 \metroset{progressbar=foot}
-\setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
 \makeatletter
 \setlength{\metropolis@progressinheadfoot@linewidth}{3pt}
 \makeatother
