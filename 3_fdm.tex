@@ -1,0 +1,29 @@
+\begin{frame}{Explicit Finite Difference Method}
+    We use the finite difference method (FDM) to obtain numerical solutions for the valuation of derivatives by solving their underlying differential equations. \newline
+    We will use the FDM to obtain numerical solutions to the Black-Scholes equation.
+\end{frame}
+
+\begin{frame}{Explicit Finite Difference Method}
+    The main goal of the FDM is to convert a continuous differential equation into a set of difference algebraic equations, which can then be solved iteratively.
+    \newline
+    We will need to define our solution to the problem on the $(S,t)$ plane
+\end{frame}
+
+\begin{frame}{Equation Discretization}
+    We discretize the equation with respect to $S$ (stock price) and $t$ (time)
+    \newline
+    Since we know the option to mature at time $T$, we can simply divide $T$ into N equally spaced intervals of $\Delta{t}$ giving $N+1$ points
+    $\{0,\Delta{t},2\Delta{t}, ... , N\Delta{t}=T\}$
+\end{frame}
+
+\begin{frame}{Equation Discreteization}
+    We similarly need to discretize $S$. To do this, we assume that the highest price of the stock is $S_{max}$, where the put option becomes worthless, and since the price can never go below 0, we can split this range into $M$ equally spaced intervals of $\Delta S$.
+    \newline
+    Since we need the stock price to be large enough, we assume $S_{max}=2S_{0}$, where $S_{0}$ is the initial stock price. Hence we get the set of points,
+    $\{0,\Delta{S},2\Delta{S}, ... , M\Delta{S}=S_{max}\}$
+\end{frame}
+
+
+\begin{frame}{Equation Discreteization}
+    [Figure from pdf]
+\end{frame}
