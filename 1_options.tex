@@ -1,3 +1,70 @@
-\begin{frame}{Options}
-    explain all terms, finance terms etc
+\section{Option Setup}
+
+\begin{frame}{What is a European put?}
+
+A European put option gives the holder the right, but not the obligation, to sell an asset at a fixed strike price \(K\) at expiry time \(T\).
+
+
+\begin{itemize}
+    \item \(K\): strike price
+    \item \(T\): expiry time
+    \item \(S_T\): asset price at expiry
+\end{itemize}
+
+
+European means the option can only be exercised at expiry.
+
+\end{frame}
+
+
+\begin{frame}{Payoff at expiry}
+
+At expiry, the payoff of a put is
+
+\[
+P(S_T,T)=\max(K-S_T,0).
+\]
+
+
+So if \(S_T<K\), the holder sells at \(K\) when the market price is lower.
+
+\[
+\text{payoff}=K-S_T
+\]
+
+If \(S_T\geq K\), the option is not exercised.
+
+\[
+\text{payoff}=0
+\]
+
+\end{frame}
+
+
+\begin{frame}{Why this becomes a pricing problem}
+
+The payoff is easy to calculate at expiry.
+
+
+
+Before expiry, the option still has value because the asset price can change before \(T\).
+
+
+
+So instead of only knowing
+
+\[
+P(S_T,T)=\max(K-S_T,0),
+\]
+
+we want to find the value at earlier times:
+
+\[
+P(S,t), \qquad 0\leq t<T.
+\]
+
+
+
+This value depends on \(S,t,K,T,r,\sigma\), and Black-Scholes gives the PDE for it.
+
 \end{frame}

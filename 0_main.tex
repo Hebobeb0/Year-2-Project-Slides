@@ -1,15 +1,42 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{pgfplots}
-\usepgfplotslibrary{external}
-\tikzexternalize
+%\usepgfplotslibrary{external}
+%\tikzexternalize
 \pgfplotsset{width=5cm,compat=1.9}
+
 
 % -------------------------------------------------------
 % THEME
 % -------------------------------------------------------
-\usetheme{Madrid}
-\usecolortheme{default}
+\usetheme{metropolis}
+\definecolor{QuantNavy}{HTML}{0F2A4A}   % Deep finance navy for titles
+\definecolor{QuantCyan}{HTML}{00A8CC}   % Bright cyan for grids/boundaries
+\definecolor{PutCoral}{HTML}{FF4B4B}    % High-alert coral-red for Put Payoffs
+\definecolor{SoftGrey}{HTML}{4A4A4A}    % Clean charcoal for body text
+
+\setbeamercolor{frametitle}{fg=white, bg=QuantNavy}       % White text on Solid Navy bar
+\setbeamercolor{section title}{fg=QuantNavy, bg=white}   % Bold navy for big section slides
+
+\setbeamercolor{normal text}{fg=SoftGrey}
+\setbeamercolor{alerted text}{fg=PutCoral}
+\setbeamercolor{example text}{fg=QuantCyan}
+\setbeamercolor{progress bar}{fg=QuantCyan, bg=QuantNavy!20!white} % Cyan tracker
+\setbeamercolor{block title}{fg=white,bg=QuantNavy}
+\setbeamercolor{block body}{fg=SoftGrey,bg=QuantNavy!5!white}
+\setbeamercolor{alertblock title}{fg=white,bg=PutCoral}
+\setbeamercolor{alertblock body}{fg=SoftGrey,bg=PutCoral!5!white}
+
+\metroset{numbering=none}
+\metroset{block=fill}
+\metroset{progressbar=foot}
+\setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+\makeatletter
+\setlength{\metropolis@progressinheadfoot@linewidth}{3pt}
+\makeatother
+
+%\usecolortheme{default}
 
 % -------------------------------------------------------
 % TITLE PAGE INFORMATION
@@ -20,49 +47,48 @@
 \institute[UCL]{
     UCL Year 2 Summer Project
 }
-\date{June 2026}
+\date{Friday 12 June 2026}
 
 % Logo (replace with your image file)
 % \logo{\includegraphics[height=1cm]{logo.png}}
-
-% -------------------------------------------------------
-% AUTO TABLE OF CONTENTS AT EACH SECTION
-% -------------------------------------------------------
-\AtBeginSection[]
-{
-  \begin{frame}
-    \frametitle{Table of Contents}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
-
-
-% =======================================================
 
 
 % =======================================================
 \begin{document}
 % =======================================================
 
-\begin{frame}{}
+
+{
+  \setbeamercolor{background canvas}{bg=QuantNavy} % Canvas color
+  \setbeamercolor{title}{fg=white}
+  \setbeamercolor{subtitle}{fg=QuantCyan}
+  \setbeamercolor{author}{fg=white!80!QuantNavy}
+  \setbeamercolor{date}{fg=white!60!QuantNavy}
+  \setbeamercolor{institute}{fg=white!60!QuantNavy}
+  
+  \begin{frame}[plain]
     \titlepage
+  \end{frame}
+}
+
+\begin{frame}{Contents}
+\tableofcontents
 \end{frame}
 
-\include{1_options}
+\input{1_options}
 
-\include{2_black_scholes}
+\input{2_black_scholes}
 
-\include{3_fdm}
+\input{3_fdm}
 
-\include{4_results}
+\input{4_results}
 
-\include{5_comparisons}
+\input{5_comparisons}
 
-\include{6_conclusion}
-
-
+\input{6_conclusion}
 
 
+%\input{examples}
 
 % =======================================================
 \end{document}
